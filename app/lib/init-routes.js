@@ -23,6 +23,10 @@ function load(app, fn){
   app.get('/game', dbg, game.index);
   app.post('/login', dbg, game.login);
   app.post('/seed', dbg, game.seed);
+  app.get('/forest/:userId', dbg, game.forest);
+  app.put('/tree/:treeId/grow', dbg, game.grow);
+  app.put('/tree/:treeId/chop/:userId', dbg, game.chop);
+  app.get('/user/:userId/dashboard', dbg, game.dashboard);
 
   console.log('Routes Loaded');
   fn();
